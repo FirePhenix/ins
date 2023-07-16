@@ -1,0 +1,57 @@
+.left-list .list-group-item:hover{
+   border-radius: 8px;
+}
+
+.left-list .list-group-item{
+    border: none;
+}
+
+
+
+.left_slide_item .icon{
+   font-size: 24px;
+    margin-right: 20px;
+}
+
+.left_slide_item .title{
+    font-size: 15px;
+}
+
+.left_slide_item{
+    display: flex;
+    flex-direction: row;
+    min-height: 50px;
+}
+.bold {
+    font-weight: bold;
+  }
+
+  .hidden {
+    display: none;
+  }
+  
+  .custom-file-upload {
+    display: inline-block;
+    padding: 6px 12px;
+    cursor: pointer;
+    background: #3498db;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+  }
+  
+  .preview-image {
+    max-width: 200px;
+    margin: 10px;
+    cursor: pointer;
+  }
+
+  .post-model{
+    width: 680px;
+    height: 620px;
+  }
+
+  .upload-images-icon{
+    font-size: 54px;
+  }
+  

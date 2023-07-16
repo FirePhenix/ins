@@ -1,0 +1,36 @@
+.register-box{
+    border: solid;
+    border-width: 1px;
+    border-color: grey;
+    min-height: 70px;
+}
+
+.register-form{
+    margin: 40px;
+}
+
+.register-title{
+    margin-bottom: 20px;
+}
+
+.form-tips{
+    font-size: 12px;
+    color: grey;
+}
+.login-box{
+  @extend .register-box;
+    min-height: 70px;
+}
+
+.login-tips{
+    font-size: medium;
+}
+
+.login-row{
+    margin-top: 10px;
+    height: 70px;
+}
+
+.login-link{
+    text-decoration: none;
+}

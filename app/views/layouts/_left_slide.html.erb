@@ -1,0 +1,51 @@
+<% list_items = {Search: "fa-solid fa-magnifying-glass icon", Explore: "fa-brands fa-wpexplorer icon",  Messages: "fa-solid fa-message icon", Notifications: "fa-solid fa-bell icon", Create: "fa-regular fa-square-plus icon", Profile: "fa-solid fa-user icon"}%>
+<div class="list-group list-group-flush left-list">
+  <a href="/" class="list-group-item list-group-item-action left-list " aria-current="true" >
+    <div class="left_slide_item">
+      <i class= "fa-solid fa-house icon"> </i>
+      <span class="<%= 'bold' if current_page?("/") %>">Home</span>
+    </div>
+  </a>
+  <% list_items.each do | key,value |%>
+    <% if key.downcase == :create %>
+      <a href="/<%= key.downcase%>" class="list-group-item list-group-item-action left-list " aria-current="true" data-bs-toggle="modal" data-bs-target="#exampleModal">
+      <% else %>
+        <a href="/<%= key.downcase%>" class="list-group-item list-group-item-action left-list " aria-current="true" >
+        <% end %>
+        <div class="left_slide_item">
+          <i class= "<%= value%> icon"> </i>
+          <span class="<%= 'bold' if current_page?("/#{key.downcase}") %>"><%= key%></span>
+        </div>
+      </a>
+    <% end %>
+  </div>
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header ">
+          <h1 class="modal-title fs-5 " id="exampleModalLabel">Create new post</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="post-model">
+            <div class="row justify-content-center">
+              <div class="col text-center align-items-center">
+                <div data-controller="image-preview">
+                  <div class="select-images" id="select-images" data-image-preview-target="selectImages">
+                    <i class="fa-regular fa-images upload-images-icon"></i>
+                    <p>Drag photos and videos here</p>
+                    <button type="button" class="custom-file-upload" data-action="click->image-preview#select">
+                      Select from computer
+                    </button>
+                    <input type="file" multiple class="hidden" data-image-preview-target="input" data-action="change->image-preview#preview">
+                  </div>
+                  <div class="preview" data-image-preview-target="preview"></div>
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

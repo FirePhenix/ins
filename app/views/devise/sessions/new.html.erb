@@ -1,0 +1,33 @@
+<div class="row justify-content-center">
+  <div class="col-4 align-self-center text-center register-box">
+    <div class="register-form">
+      <div class="register-title">
+        <i data-visualcompletion="css-img" aria-label="Instagram" class="" role="img" style="background-image: url(&quot;https://static.cdninstagram.com/rsrc.php/v3/yK/r/ATdtiLb2BQ9.png&quot;); background-position: 0px 0px; background-size: 176px 181px; width: 175px; height: 51px; background-repeat: no-repeat; display: inline-block;"></i>
+      </div>
+      <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+        <div class="input-group mb-3">
+          <%= f.text_field :login, autofocus: true , placeholder: "email or username" , class: "form-control"%>
+        </div>
+        <div class="input-group mb-3">
+          <%= f.password_field :password, placeholder: "password", autocomplete: "current-password", class: "form-control"%>
+        </div>
+        <% if devise_mapping.rememberable? %>
+          <div class="input-group mb-3">
+            <%= f.check_box :remember_me ,class: "form-check-input"%>
+            <%= f.label :remember_me %>
+          </div>
+        <% end %>
+        <div class="d-grid">
+          <%= f.submit "Login", class: "btn btn-primary"%>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+<div class="row justify-content-center login-row">
+  <div class="col-4 d-flex align-items-center text-center login-box align-middle">
+    <div class="mx-auto">
+      <span class="login-tips">Have a account?</span> <%= render "devise/shared/links", class: "login-link" %>
+    </div>
+  </div>
+</div>

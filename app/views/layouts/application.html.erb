@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Ins</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= javascript_importmap_tags %>
+  </head>
+
+  <body>
+  <div class="container">
+  <% if user_signed_in?%>
+    <div class="row">
+      <div class="col-3">
+        <%= render 'layouts/left_slide' %>
+      </div>
+      <div class="col-9">
+          <%= yield %>
+      </div>
+     
+    </div>
+    <% else %>
+       <%= yield %>
+    <% end %>
+  </div>
+  </body>
+</html>
