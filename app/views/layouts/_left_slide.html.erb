@@ -19,18 +19,21 @@
       </a>
     <% end %>
   </div>
-  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" data-controller="image-preview">
     <div class="modal-dialog modal-lg">
       <div class="modal-content">
         <div class="modal-header ">
           <h1 class="modal-title fs-5 " id="exampleModalLabel">Create new post</h1>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
-        <div class="modal-body">
+        <div class="modal-body" >
           <div class="post-model">
             <div class="row justify-content-center">
               <div class="col text-center align-items-center">
-                <div data-controller="image-preview">
+                <div >
+                  <div class="form" data-image-preview-target="postForm" style="display:none">
+                    show form
+                  </div>
                   <div class="select-images" id="select-images" data-image-preview-target="selectImages">
                     <i class="fa-regular fa-images upload-images-icon"></i>
                     <p>Drag photos and videos here</p>
@@ -39,12 +42,26 @@
                     </button>
                     <input type="file" multiple class="hidden" data-image-preview-target="input" data-action="change->image-preview#preview">
                   </div>
-                  <div class="preview" data-image-preview-target="preview"></div>
-
+                  <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-inner" data-image-preview-target="preview">
+                      <!-- Images will be added here by the image-preview Stimulus controller -->
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                      <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                      <span class="visually-hidden">Next</span>
+                    </button>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
+        </div>
+        <div class="modal-footer" >
+          <button type="button" class="btn btn-primary" data-action="click->image-preview#next">Next</button>
         </div>
       </div>
     </div>

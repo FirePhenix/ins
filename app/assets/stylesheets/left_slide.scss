@@ -41,17 +41,21 @@
   }
   
   .preview-image {
-    max-width: 200px;
+    max-width: 300px;
     margin: 10px;
     cursor: pointer;
   }
 
   .post-model{
-    width: 680px;
     height: 620px;
   }
 
   .upload-images-icon{
     font-size: 54px;
+  }
+
+  .carousel-image{
+    height: 100%;
+    width: 100%;
   }
   
